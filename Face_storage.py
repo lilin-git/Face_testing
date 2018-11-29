@@ -22,9 +22,9 @@ def face_storage(image, userId, group_Id='0'):
     userId = str(userId)
 
 
-    """ 如果有可选参数 """
-    options = {}
-    options["quality_control"] = "NORMAL"
+    options = {
+        "quality_control": "NORMAL"
+    }
 
     """ 带参数调用人脸注册 """
     try:

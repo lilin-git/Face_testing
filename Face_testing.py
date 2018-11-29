@@ -31,10 +31,12 @@ def face_recognition(face):
     print "face alignment in processing"
 
     imageType = "BASE64"
-    options = {}
-    options["face_field"] = "age"
-    options["max_face_num"] = 1
-    options["face_type"] = "LIVE"
+    options = {
+        "face_field": "age",
+        "max_face_num": 1,
+        "face_type": "LIVE"
+    }
+
 
     """ 带参数调用人脸检测 """
     try:
