@@ -14,9 +14,9 @@ import base64
 import copy
 from shutil import copyfile
 
-image_raw = '/home/pushi_dev/a-ll/Face_Distinguish/image_raw/'
-photo = '/home/pushi_dev/a-ll/Face_Distinguish/photo/'
-output = '/home/pushi_dev/a-ll/Face_Distinguish/output/'
+image_raw = '/home/pushi_dev/a-ll/Face_testing/image_raw/'
+photo = '/home/pushi_dev/a-ll/Face_testing/photo/'
+output = '/home/pushi_dev/a-ll/Face_testing/output/'
 #检测人脸
 def face_recognition(face):
     APP_ID = '14967518'
@@ -91,16 +91,16 @@ def face_alignment(face):
 if __name__ == '__main__':
 
     #
-    # for filename in os.listdir(image_raw):
-    #     if '.jpg' or '.jpeg' or '.png' in filename:
-    #             message = face_recognition(image_raw+filename)
-    #             if message:
-    #                 face_cut(image_raw+filename, message)
-    #                 print '面部切割完成'
-    #             else:
-    #                 print '没有面部信息'
-    #     else:
-    #         pass
+    for filename in os.listdir(image_raw):
+        if '.jpg' or '.jpeg' or '.png' in filename:
+                message = face_recognition(image_raw+filename)
+                if message:
+                    face_cut(image_raw+filename, message)
+                    print '面部切割完成'
+                else:
+                    print '没有面部信息'
+        else:
+            pass
 
 
     for filename in os.listdir(output):

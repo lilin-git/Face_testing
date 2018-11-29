@@ -4,7 +4,7 @@ from aip import AipFace
 import os
 from Face_testing import face_recognition, face_alignment
 
-photo = '/home/pushi_dev/a-ll/Face_Distinguish/photo/'
+photo = '/home/pushi_dev/a-ll/Face_testing/photo/'
 
 def face_storage(image, userId, group_Id='0'):
     APP_ID = '14967518'
