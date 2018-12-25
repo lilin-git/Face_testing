@@ -3,12 +3,9 @@ import aip
 from aip import AipBodyAnalysis
 from aip import AipOcr
 from aip import AipFace
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
 from PIL import Image
 import numpy as np
 import time
-import cv2
 import os
 import base64
 import copy
@@ -28,7 +25,7 @@ def face_recognition(face):
     file_road = face
     i = open(file_road, 'rb')
     img = base64.b64encode(i.read())
-    print "face alignment in processing"
+    print("face alignment in processing")
 
     imageType = "BASE64"
     options = {
@@ -87,20 +84,20 @@ def face_alignment(face):
         else:
             return None, None, None
     except Exception as e:
-        print e
+        print(e)
 
 
 if __name__ == '__main__':
 
-    #
+
     for filename in os.listdir(image_raw):
         if '.jpg' or '.jpeg' or '.png' in filename:
                 message = face_recognition(image_raw+filename)
                 if message:
                     face_cut(image_raw+filename, message)
-                    print '面部切割完成'
+                    print('面部切割完成')
                 else:
-                    print '没有面部信息'
+                    print('没有面部信息')
         else:
             pass
 
@@ -108,6 +105,6 @@ if __name__ == '__main__':
     for filename in os.listdir(output):
         if '.jpg' or '.jpeg' or '.png' in filename:
             group_id, user_id, score = face_alignment(output+filename)
-            print score
+            print(score)
         else:
             pass
